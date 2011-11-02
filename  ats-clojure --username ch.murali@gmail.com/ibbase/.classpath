@@ -1,0 +1,6 @@
+<classpath>
+  <classpathentry excluding="**/.svn/|**/CVS/" kind="src" path="src/main/java"/>
+  <classpathentry kind="output" path="target/classes"/>
+  <classpathentry kind="var" sourcepath="M2_REPO/com/ib/jtsclient/9.6/jtsclient-9.6-sources.jar" javadocpath="M2_REPO/com/ib/jtsclient/9.6/jtsclient-9.6-javadoc.jar" path="M2_REPO/com/ib/jtsclient/9.6/jtsclient-9.6.jar"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+</classpath>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ShowViewDialog">
+		<item value="372" key="DIALOG_WIDTH"/>
+		<item value="org.eclipse.rse.terminals.ui.view.TerminalView" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="234" key="DIALOG_Y_ORIGIN"/>
+		<item value="462" key="DIALOG_HEIGHT"/>
+		<item value="775" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ui"/>
+			<item value="org.eclipse.rse.ui.view"/>
+		</list>
+	</section>
+	<section name="ImportExportAction">
+		<item value="org.eclipse.ui.wizards.import.ExternalProject" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
+	</section>
+</section>
