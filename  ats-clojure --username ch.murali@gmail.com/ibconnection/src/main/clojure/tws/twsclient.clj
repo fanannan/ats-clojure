@@ -2,7 +2,6 @@
   (:import (com.ib.client EClientSocket Contract))
   (:import (wrapper.ewrapperimpl Ewrapperimpl))
   (:import (com.ib.client EClientSocket Contract))
-  (:import (ewrapperimpl Ewrapperimpl))
   )
 (def clientSocket (EClientSocket. (Ewrapperimpl.)))
 (. clientSocket eConnect "localhost" 7496 3)
