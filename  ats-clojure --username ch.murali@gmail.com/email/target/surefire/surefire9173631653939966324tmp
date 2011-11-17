@@ -1,0 +1,5 @@
+#surefire
+#Fri Jul 15 19:41:25 EDT 2011
+user.dir=/home/mchapala/development/workspace/eclipse/email
+localRepository=/home/mchapala/.m2/repository
+basedir=/home/mchapala/development/workspace/eclipse/email

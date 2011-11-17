@@ -1,0 +1,32 @@
+#surefire
+#Fri Aug 05 18:00:12 EDT 2011
+testClassesDirectory=/home/mchapala/development/workspace/eclipse/email/target/test-classes
+classPathUrl.4=/home/mchapala/.m2/repository/org/clojure/clojure/1.3.0-alpha8/clojure-1.3.0-alpha8.jar
+classPathUrl.3=/home/mchapala/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar
+classPathUrl.2=/home/mchapala/.m2/repository/javax/mail/mail/1.4.1/mail-1.4.1.jar
+useManifestOnlyJar=true
+classPathUrl.1=/home/mchapala/development/workspace/eclipse/email/target/classes
+reportsDirectory=/home/mchapala/development/workspace/eclipse/email/target/surefire-reports
+classPathUrl.0=/home/mchapala/development/workspace/eclipse/email/target/test-classes
+dirscanner.0=directoryScannerOptions
+providerConfiguration=org.apache.maven.surefire.junit.JUnit3Provider
+testSuiteDefinitionTestSourceDirectory=/home/mchapala/development/workspace/eclipse/email/src/test/clojure
+surefireClassPathUrl.1=/home/mchapala/.m2/repository/org/apache/maven/surefire/surefire-api/2.7.1/surefire-api-2.7.1.jar
+surefireClassPathUrl.0=/home/mchapala/.m2/repository/org/apache/maven/surefire/surefire-junit3/2.7.1/surefire-junit3-2.7.1.jar
+report.2=org.apache.maven.surefire.report.XMLReporter
+useSystemClassLoader=true
+report.1=org.apache.maven.surefire.report.BriefFileReporter
+report.0=org.apache.maven.surefire.report.ForkingConsoleReporter
+excludes0=**/*$*
+isTrimStackTrace=true
+dirscanner.0.params=/home/mchapala/development/workspace/eclipse/email/target/test-classes|[**/Test*.java, **/*Test.java, **/*TestCase.java]|[**/*$*]
+includes2=**/*TestCase.java
+enableAssertions=true
+includes1=**/*Test.java
+failIfNoTests=false
+includes0=**/Test*.java
+dirscanner.0.types=java.io.File|java.util.ArrayList|java.util.ArrayList
+classPathUrl.7=/home/mchapala/.m2/repository/com/hazelcast/hazelcast/1.9.3.1/hazelcast-1.9.3.1.jar
+childDelegation=false
+classPathUrl.6=/home/mchapala/.m2/repository/swank-clojure/swank-clojure/1.2.1/swank-clojure-1.2.1.jar
+classPathUrl.5=/home/mchapala/.m2/repository/org/clojure/clojure-contrib/1.2.0/clojure-contrib-1.2.0.jar
