@@ -3,8 +3,8 @@ apply plugin: 'maven'
 apply plugin: 'clojure'
 
 version = '1.0.0'
-warnOnReflection = true
-aotCompile = true
+warnOnReflection = false
+aotCompile = false
 
 repositories {
     mavenCentral()
@@ -18,8 +18,11 @@ buildscript {
                 dependencies { classpath "clojuresque:clojuresque:1.4.1" }
 }
 
+sourceSets.main.clojure {
+   // clojureExcludeNamespace 'my.project.examples.**.*'
+}
+
 dependencies {
     compile 'org.clojure:clojure:1.3.0'
     compile 'com.ib:jtsclient:9.6'
-    development "swank-clojure:swank-clojure:1.3.1"
   }
