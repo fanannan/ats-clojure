@@ -1,1 +1,1 @@
-include 'email','ibconnection','ibwebapp','ibmessaging'
+include 'ibconnection','ibwebapp'
