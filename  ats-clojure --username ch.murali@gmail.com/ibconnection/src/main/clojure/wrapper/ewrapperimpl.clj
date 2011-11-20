@@ -1,25 +1,27 @@
 (ns wrapper.ewrapperimpl
     (:import (com.ib.client EWrapper AnyWrapper))
     (:import (java.lang Exception))
+    (:use [clojure.tools.logging :only (info error)])
+    
 )
 
 
 (defrecord Ewrapperimpl[]
   EWrapper
   (#^void error [this #^String e]
-    (print e)
+    (error e)
     )
   (#^void error [this #^Exception e]
-    (print e)
+    (error e)
     )
   (error [this i i1 string]
-    (print i i1 string)
+    (info i i1 string)
     )
   (#^void connectionClosed[this]
-    (print "connectionClosed")
+    (info "connectionClosed")
     )
   (tickPrice[this i i1 d i2]
-    (print i i1 d i2)
+    (info i i1 d i2)
     )
   (tickSize[this,  i, i1, i2])
   (tickOptionComputation[this,  i,i1,d,d1,d2,d3,d4,d5,d6,d7])
@@ -45,22 +47,20 @@
   (managedAccounts[this,   string])
   (receiveFA[this,   i,  string])
   (historicalData[this,   i,  string,  d,  d1,  d2,  d3,  i1,  i2,  d4,  bln]
-
+    (info "historical data:" i string d d1 d2 d3 i1 i2 d4 bln )
+    (println "historical data:" i string d d1 d2 d3 i1 i2 d4 bln )
     )
   (scannerParameters[this,   string])
   (scannerData[this,   i,  i1,cd,  string,  string1,  string2,  string3])
   (scannerDataEnd[this,   i])
-  (realtimeBar[this,i,l,d,d1,d2,d3,l1,d4,i1])
+  (realtimeBar[this,i,l,d,d1,d2,d3,l1,d4,i1]
+    (info this i l d d1 d2 d3 l1 d4 i1)
+    )
   (currentTime[this,l]
-    (print "currenttime on tws" l)
+    (info "currenttime on tws" l)
     )
   (fundamentalData[this,   i,  string])
   (deltaNeutralValidation[this,   i,uc])
   (tickSnapshotEnd[this,   i])
 
   )
-
-
-
-
-
