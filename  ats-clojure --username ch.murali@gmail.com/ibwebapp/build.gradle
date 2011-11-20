@@ -3,7 +3,7 @@ apply plugin: 'maven'
 apply plugin: 'clojure'
 
 version = '1.0.0'
-warnOnReflection = true
+warnOnReflection = false
 aotCompile = true
 
 repositories {
@@ -26,4 +26,9 @@ dependencies {
     compile 'org.markdownj:markdownj:0.3.0-1.0.2b4'
     compile 'noir:noir:1.1.1-SNAPSHOT'
     compile 'simpledb:simpledb:0.1.4'
+    compile 'com.ib:jtsclient:9.6'
+    compile 'ch.qos.logback:logback-core:1.0.0'
+    compile 'org.clojure:tools.logging:0.2.3'
+    compile 'javax.mail:mail:1.4.1'
+
   }
