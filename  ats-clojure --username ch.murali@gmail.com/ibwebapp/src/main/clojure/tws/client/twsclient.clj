@@ -7,9 +7,9 @@
 
 
 (defn connect
- ([wrapper] (connect host 7496 1))
-([wrapper host] (connect host 7496 1))
-([wrapper host port] (connect port 1))
+([wrapper] (connect wrapper "localhost" 7496 1))
+([wrapper host] (connect wrapper host 7496 1))
+([wrapper host port] (connect wrapper port 1))
 ([wrapper host port client-id]
 (let [connection (EClientSocket. wrapper)]
 (doto connection
@@ -37,7 +37,7 @@
 
 (def c (createContract "BAC"))
 ;(print c :m_symbol c :m_exchnage)
-(.(connect localhost ) reqHistoricalData 1  c  "20100507 12:00:00"  "3600 S"  "15 secs"  "TRADES"  0 1)
+(.(connect (Ewrapperimpl.)) reqHistoricalData 1  c  "20100507 12:00:00"  "3600 S"  "15 secs"  "TRADES"  0 1)
 
 
 (defn disconnect

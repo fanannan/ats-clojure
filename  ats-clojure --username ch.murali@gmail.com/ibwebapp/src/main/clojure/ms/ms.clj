@@ -1,6 +1,7 @@
 (ns ms.ms
   (:import (com.hazelcast.core ITopic Hazelcast MessageListener))
-  (:import (ml.ml Mylistener  Mylistener2))
+  (:require [ml.ml])
+  (:import [ml.ml Mylistener  Mylistener2])
   (:use [clojure.tools.logging :only (info error debug)])
   )
 (debug "sender")
