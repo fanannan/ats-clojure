@@ -6,7 +6,7 @@
 (defrecord Mylistener []
 com.hazelcast.core.MessageListener
 (onMessage [this obj] 
-           (debug "listeneer received message" obj)
+          ; (debug "listeneer received message" obj)
            )
 )
 
