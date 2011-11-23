@@ -36,8 +36,7 @@
 						<sourceDirectory>src/main/clojure</sourceDirectory>
 					</sourceDirectories>
 					<clojureOptions>-Xmx1G</clojureOptions>
-					<!-- <script>src/test/clojure/run.clj</script> 
-					<testScript>src/test/clojure/test.clj</testScript> -->
+					<!-- <script>src/test/clojure/run.clj</script> <testScript>src/test/clojure/test.clj</testScript> -->
 				</configuration>
 				<executions>
 					<execution>
@@ -66,7 +65,7 @@
 			<id>clojure-releases</id>
 			<url>http://build.clojure.org/releases</url>
 		</repository>
-		
+
 		<repository>
 			<id>clojure-snapshots</id>
 			<url>http://build.clojure.org/snapshots</url>
@@ -82,7 +81,7 @@
 			<artifactId>clojure</artifactId>
 			<version>${clojure.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.hazelcast</groupId>
 			<artifactId>hazelcast</artifactId>
@@ -93,36 +92,47 @@
 			<artifactId>hazelcast</artifactId>
 			<version>1.9.3.1</version>
 		</dependency>
-	
+
 		<dependency>
 			<groupId>com.ib</groupId>
 			<artifactId>jtsclient</artifactId>
 			<version>9.6</version>
 		</dependency>
-	   <dependency>
+		<dependency>
 			<groupId>clj-time</groupId>
 			<artifactId>clj-time</artifactId>
 			<version>0.3.0</version>
 		</dependency>
-	   <dependency>
+		<dependency>
 			<groupId>org.markdownj</groupId>
 			<artifactId>markdownj</artifactId>
 			<version>0.3.0-1.0.2b4</version>
 		</dependency>
-     	<dependency>
+		<dependency>
 			<groupId>noir</groupId>
 			<artifactId>noir</artifactId>
 			<version>1.1.1-SNAPSHOT</version>
 		</dependency>
-	   <dependency>
+		<dependency>
 			<groupId>simpledb</groupId>
 			<artifactId>simpledb</artifactId>
 			<version>0.1.4</version>
 		</dependency>
-	   <dependency>
+		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
 			<version>1.4.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.clojure</groupId>
+			<artifactId>tools.namespace</artifactId>
+			<version>0.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.clojure</groupId>
+			<artifactId>tools.logging</artifactId>
+			<version>0.2.3</version>
+		</dependency>
+
 	</dependencies>
 </project>
