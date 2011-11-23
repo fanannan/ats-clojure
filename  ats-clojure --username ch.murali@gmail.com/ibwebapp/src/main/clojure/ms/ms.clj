@@ -1,6 +1,6 @@
 (ns ms.ms
   (:import (com.hazelcast.core ITopic Hazelcast MessageListener))
-  (:require (ml.Mylistener))
+  (:require (ml.ml.Mylistener))
   (:use [clojure.tools.logging :only (info error debug)])
   )
 (debug "sender")
@@ -8,9 +8,6 @@
 (def topic (. Hazelcast (getTopic  "default") ))
 (def mL (ml.ml.Mylistener. ))
 (. topic  (addMessageListener mL))
-
-
-
 
 (def topic1 (. Hazelcast (getTopic  "default") ))
 (def mL2 (ml.ml.Mylistener2. ))
