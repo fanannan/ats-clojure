@@ -36,17 +36,27 @@
 						<sourceDirectory>src/main/clojure</sourceDirectory>
 					</sourceDirectories>
 					<clojureOptions>-Xmx1G</clojureOptions>
+					<temporaryOutputDirectory>true</temporaryOutputDirectory>
+					<copyAllCompiledNamespaces>true</copyAllCompiledNamespaces>
+					
 					<!-- <script>src/test/clojure/run.clj</script> <testScript>src/test/clojure/test.clj</testScript> -->
 				</configuration>
-				<executions>
-					<execution>
-						<id>compile</id>
-						<phase>compile</phase>
-						<goals>
-							<goal>compile</goal>
-						</goals>
-					</execution>
-				</executions>
+				  <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
 			</plugin>
 
 			<plugin>
@@ -102,6 +112,12 @@
 			<groupId>clj-time</groupId>
 			<artifactId>clj-time</artifactId>
 			<version>0.3.0</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>clojure-contrib</artifactId>
+					<groupId>org.clojure</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.markdownj</groupId>
@@ -112,6 +128,12 @@
 			<groupId>noir</groupId>
 			<artifactId>noir</artifactId>
 			<version>1.1.1-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>clojure-contrib</artifactId>
+					<groupId>org.clojure</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>simpledb</groupId>
