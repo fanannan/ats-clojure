@@ -36,7 +36,8 @@
 						<sourceDirectory>src/main/clojure</sourceDirectory>
 					</sourceDirectories>
 					<clojureOptions>-Xmx1G</clojureOptions>
-					<!-- <script>src/test/clojure/run.clj</script> <testScript>src/test/clojure/test.clj</testScript> -->
+					<!-- <script>src/test/clojure/run.clj</script> 
+					<testScript>src/test/clojure/test.clj</testScript> -->
 				</configuration>
 				<executions>
 					<execution>
@@ -48,13 +49,11 @@
 					</execution>
 				</executions>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
+				<version>2.3.2</version>
 			</plugin>
 		</plugins>
 	</build>
@@ -67,10 +66,7 @@
 			<id>clojure-releases</id>
 			<url>http://build.clojure.org/releases</url>
 		</repository>
-		<repository>
-			<id>incanter</id>
-			<url>http://repo.incanter.org</url>
-		</repository>
+		
 		<repository>
 			<id>clojure-snapshots</id>
 			<url>http://build.clojure.org/snapshots</url>
@@ -86,21 +82,7 @@
 			<artifactId>clojure</artifactId>
 			<version>${clojure.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>swank-clojure</groupId>
-			<artifactId>swank-clojure</artifactId>
-			<version>1.2.1</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.clojure</groupId>
-					<artifactId>clojure</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.clojure</groupId>
-					<artifactId>clojure-contrib</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+		
 		<dependency>
 			<groupId>com.hazelcast</groupId>
 			<artifactId>hazelcast</artifactId>
