@@ -1,10 +1,8 @@
 (ns wrapper.ewrapperimpl
-    (:import (com.ib.client EWrapper AnyWrapper))
+    (:import (com.ib.client EWrapper))
     (:import (java.lang Exception))
     (:use [clojure.tools.logging :only (info error)])
-    
 )
-
 
 (defrecord Ewrapperimpl[]
   EWrapper
@@ -46,9 +44,9 @@
   (updateNewsBulletin[this,  i,  i1,  string,  string1])
   (managedAccounts[this,   string])
   (receiveFA[this,   i,  string])
-  (historicalData[this,   i,  string,  d,  d1,  d2,  d3,  i1,  i2,  d4,  bln]
-    (info "historical data:" i string d d1 d2 d3 i1 i2 d4 bln )
-    (println "historical data:" i string d d1 d2 d3 i1 i2 d4 bln )
+  (historicalData[this requestId date open high low close volume count wap hasGaps]
+    (info "historical data:" requestId date open high low close volume count wap hasGaps )
+    
     )
   (scannerParameters[this,   string])
   (scannerData[this,   i,  i1,cd,  string,  string1,  string2,  string3])
