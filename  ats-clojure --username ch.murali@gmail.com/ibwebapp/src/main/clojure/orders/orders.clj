@@ -1,5 +1,5 @@
 (ns order.orders
-(:use [ib-re-actor.conversions])
+
 (:import [com.ib.client Order]))
 
 (defn id
@@ -31,12 +31,9 @@ Valid actions are: :buy, :sell, :sell-short."
 (limit-order contract action quantity limit-price (swap! *client-order-id* inc)))
 ([contract action quantity limit-price id]
 (let [order (Order.)]
-(set! (.m_action order) (translate-to-ib-order-action action))
-(set! (.m_orderType order) (translate-to-ib-order-type :limit))
-(set! (.m_tif order) (translate-to-ib-time-in-force :day))
-(ib-re-actor.orders/id order id)
-(ib-re-actor.orders/quantity order quantity)
-(ib-re-actor.orders/limit-price order limit-price)
+(orders.orders/id order id)
+(orders.orders/quantity order quantity)
+(orders.orders/limit-price order limit-price)
 order)))
 
 (defmulti time-in-force

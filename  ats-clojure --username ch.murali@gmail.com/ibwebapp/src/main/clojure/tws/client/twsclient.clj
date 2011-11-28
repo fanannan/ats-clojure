@@ -3,6 +3,7 @@
   (:require [wrapper.ewrapperimpl])
   ;"require should come before import for def record imports"
   (:import [wrapper.ewrapperimpl Ewrapperimpl])
+   (:use [clojure.tools.logging :only (info error)])
   )
 
 
@@ -12,7 +13,8 @@
 ([wrapper host port] (connect wrapper port 1))
 ([wrapper host port client-id]
 (let [connection (EClientSocket. wrapper)]
-(doto connection
+(println "connecting to " host "port" port "clientid" client-id)
+  (doto connection
 (.eConnect host port client-id)
 (.setServerLogLevel 5)
 (.reqCurrentTime))))
@@ -20,29 +22,54 @@
 
 
 
+
+
 (defn createContract
-    ([securityName]
+    ([securityName secType exchage expiry m_right multiplier primaryExch currency]
        (doto (Contract. )
           (:m_symbol securityName)
-          (:m_secType "STK")
-          (:m_exchange "SMART")
-          (:m_expiry "")
-          (:m_right "")
-          (:m_multiplier "")
-          (:m_primaryExch "")
-          (:m_currency "USD")
+          (:m_secType secType)
+          (:m_exchange exchage)
+          (:m_expiry expiry)
+          (:m_right m_right)
+          (:m_multiplier multiplier)
+          (:m_primaryExch primaryExch)
+          (:m_currency currency)
           )
+      )
+    ([securityName]
+       (createContract securityName "STK" "SMART" "" "" "" "" "USD")
+      )
+    ([securityName exchange]
+       (createContract securityName "STK" exchange "" "" "" "" "USD")
       )
       )
 
-(def c (createContract "BAC"))
-;(print c :m_symbol c :m_exchnage)
-(.(connect (Ewrapperimpl.)) reqHistoricalData 1  c  "20100507 12:00:00"  "3600 S"  "15 secs"  "TRADES"  0 1)
+
+(defn request-market-data
+([connection id contract tick-list]
+(.reqMktData connection id contract tick-list false)
+id
+)
+
+([connection id contract]
+(.reqMktData connection id contract "" false)
+id)
+)
+
 
 
 (defn disconnect
-"Call this function to terminate the connections with TWS.
-Calling this function does not cancel orders that have already been sent."
 [connection]
 (.eDisconnect connection))
 
+
+
+;default lis of contracts 
+;; modify using assoc
+(def contracts {1 (createContract "BAC")
+                2 (createContract "IBN")
+                3 (createContract "BAC" "NYSE")
+                
+                }
+              )

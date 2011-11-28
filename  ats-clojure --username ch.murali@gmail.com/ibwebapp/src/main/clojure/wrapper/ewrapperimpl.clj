@@ -54,8 +54,9 @@
   (realtimeBar[this,i,l,d,d1,d2,d3,l1,d4,i1]
     (info this i l d d1 d2 d3 l1 d4 i1)
     )
-  (currentTime[this,l]
-    (info "currenttime on tws" l)
+  (currentTime[this time]
+              (println )
+    (info "currenttime on tws" time)
     )
   (fundamentalData[this,   i,  string])
   (deltaNeutralValidation[this,   i,uc])
