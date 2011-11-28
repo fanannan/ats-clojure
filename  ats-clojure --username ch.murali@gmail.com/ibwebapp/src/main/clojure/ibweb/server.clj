@@ -2,7 +2,7 @@
   (:require [noir.server :as server]
             [ibweb.models :as models]))
 
-(server/load-views "src/ibweb/views/")
+(server/load-views "ibweb/views/")
 
 (defn -main [& m]
   (let [mode (or (first m) :dev)
