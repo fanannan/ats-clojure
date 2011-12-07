@@ -7,11 +7,15 @@
   (:use [clojure.java.shell :only (sh)])
   )
 
+;start tws
 
-;strart tws
 
-;(sh "javaws" "/home/mchapala/Downloads/edemo.jnlp")
-;(. Thread (sleep 60000))
+(info "Starting tws")
+(info "Executing javaws /home/mchapala/Downloads/edemo.jnlp &")
+;(sh "javaws" "/home/mchapala/Downloads/edemo.jnlp &")
+(info "Started sleeping")
+;(info "time" (. currentTimeMillis System))
+(. Thread (sleep 60000))
 (info "comes to connection")
 ; connect tws
 (def connObj (connect (Ewrapperimpl.) "localhost" 7496 4))
@@ -25,9 +29,6 @@
 
 (request-market-data connObj 1  (get contracts 3) "221")
 
-
-
-                 
                  
 ;(info "tws queue...while true")
 ;(while true 
@@ -37,8 +38,4 @@
 
 
 ; create hazelcast
-
 ;
-
-
-

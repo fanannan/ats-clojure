@@ -1,0 +1,13 @@
+# start tws station
+# get connect and disconnect status
+# request historical data
+# getting error 22:55:45:337 JTS-EServerSocket-164: [4:49:57:1:0:0:0:ERR] -'oc' : cause - Please enter exchange
+
+
+
+# request market data
+# check messages are received
+# 
+# get account information
+# start startegy
+
