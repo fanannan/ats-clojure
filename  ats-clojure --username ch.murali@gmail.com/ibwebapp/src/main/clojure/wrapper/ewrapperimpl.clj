@@ -8,18 +8,20 @@
   EWrapper
   (#^void error [this #^String e]
     (error e)
+    (info e)
     )
   (#^void error [this #^Exception e]
     (error e)
+    (info e)
     )
   (error [this i i1 string]
-    (info i i1 string)
+    (info "Ewrapperimpl.error method" i i1 string)
     )
   (#^void connectionClosed[this]
-    (info "connectionClosed")
+    (info "Ewrapperimpl.connectionClosed")
     )
   (tickPrice[this i i1 d i2]
-    (info i i1 d i2)
+    (info "Ewrapperimpl" i i1 d i2)
     )
   (tickSize[this,  i, i1, i2])
   (tickOptionComputation[this,  i,i1,d,d1,d2,d3,d4,d5,d6,d7])

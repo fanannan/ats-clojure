@@ -3,7 +3,8 @@
   (:require [wrapper.ewrapperimpl])
   ;"require should come before import for def record imports"
   (:import [wrapper.ewrapperimpl Ewrapperimpl])
-   (:use [clojure.tools.logging :only (info error)])
+  (:use [clojure.tools.logging :only (info error)])
+
   )
 
 
@@ -25,8 +26,10 @@
 
 
 (defn createContract
-    ([securityName secType exchage expiry m_right multiplier primaryExch currency]
-       (doto (Contract. )
+    (
+      [securityName secType exchage expiry m_right multiplier primaryExch currency]
+      (def c (Contract.))
+      (doto (c)
           (:m_symbol securityName)
           (:m_secType secType)
           (:m_exchange exchage)
@@ -48,6 +51,7 @@
 
 (defn request-market-data
 ([connection id contract tick-list]
+  (info "requesting market data for" contract)
 (.reqMktData connection id contract tick-list false)
 id
 )
@@ -67,9 +71,7 @@ id)
 
 ;default lis of contracts 
 ;; modify using assoc
-(def contracts {1 (createContract "BAC")
-                2 (createContract "IBN")
-                3 (createContract "BAC" "NYSE")
-                
+(def contracts {1 createContract "BAC"
+                2 createContract "IBN"
                 }
               )

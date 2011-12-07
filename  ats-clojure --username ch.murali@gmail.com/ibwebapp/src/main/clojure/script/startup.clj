@@ -1,8 +1,9 @@
 (ns script.startup
+ (:require [wrapper.ewrapperimpl])
  (:use tws.client.twsclient) 
-  (:require [wrapper.ewrapperimpl])
   ;"require should come before import for def record imports"
   (:import [wrapper.ewrapperimpl Ewrapperimpl])
+ (:import (com.thoughtworks.xstream XStream))
   (:use [clojure.tools.logging :only (info error)])
   (:use [clojure.java.shell :only (sh)])
   )
@@ -26,8 +27,13 @@
 (info "requesting historical data.done")
 
 (info "requesting market Data")
-
-(request-market-data connObj 1  (get contracts 3) "221")
+(def xstreamInstance (XStream.))
+(info "all contracts " (.toXML xstreamInstance contracts))
+(def sampleContractToTest (get contracts 2))
+(info "all contracts " (.toXML xstreamInstance contracts))
+(info "getting data for " sampleContractToTest)
+(info "getting data for " (.toXML xstreamInstance sampleContractToTest))
+(request-market-data connObj 1  (get contracts 2) "221")
 
                  
 ;(info "tws queue...while true")
