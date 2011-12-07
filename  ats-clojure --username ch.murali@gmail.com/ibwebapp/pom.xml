@@ -34,7 +34,7 @@
 				<version>1.3.8</version>
 				<extensions>true</extensions>
 				<configuration>
-					<replScript>script/startup.clj</replScript>
+					<!--  <replScript>script/startup.clj</replScript> -->
 					<sourceDirectories>
 						<sourceDirectory>src/main/clojure</sourceDirectory>
 					</sourceDirectories>
@@ -45,7 +45,8 @@
 						<namespace>!ibweb.*</namespace>
 						<namespace>!orders.*</namespace>
 					</namespaces>
-					<!-- <script>src/test/clojure/run.clj</script> <testScript>src/test/clojure/test.clj</testScript> -->
+					<!-- <script>src/test/clojure/run.clj</script> 
+					     <testScript>src/test/clojure/test.clj</testScript> -->
 				</configuration>
 				<executions>
 					<execution>
@@ -103,11 +104,7 @@
 			<version>${clojure.version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.hazelcast</groupId>
-			<artifactId>hazelcast</artifactId>
-			<version>1.9.3.1</version>
-		</dependency>
+	
 		<dependency>
 			<groupId>com.hazelcast</groupId>
 			<artifactId>hazelcast</artifactId>
@@ -160,6 +157,5 @@
 			<artifactId>tools.logging</artifactId>
 			<version>0.2.3</version>
 		</dependency>
-
 	</dependencies>
 </project>
