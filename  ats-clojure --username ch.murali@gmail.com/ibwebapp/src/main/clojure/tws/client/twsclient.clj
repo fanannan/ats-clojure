@@ -22,32 +22,26 @@
 )
 
 
-
-
-
 (defn createContract
-    (
-      [securityName secType exchage expiry m_right multiplier primaryExch currency]
-      (def c (Contract.))
+      [securityName secType exchange expiry m_right multiplier primaryExch currency]
+      (let [c (Contract.)]
       (doto (c)
           (:m_symbol securityName)
           (:m_secType secType)
-          (:m_exchange exchage)
+          (:m_exchange exchange)
           (:m_expiry expiry)
           (:m_right m_right)
           (:m_multiplier multiplier)
           (:m_primaryExch primaryExch)
           (:m_currency currency)
           )
+        c
       )
-    ([securityName]
+   [securityName exchange]
+       (createContract securityName "STK" exchange "" "" "" "" "USD")
+   [securityName]
        (createContract securityName "STK" "SMART" "" "" "" "" "USD")
       )
-    ([securityName exchange]
-       (createContract securityName "STK" exchange "" "" "" "" "USD")
-      )
-      )
-
 
 (defn request-market-data
 ([connection id contract tick-list]
@@ -71,7 +65,11 @@ id)
 
 ;default lis of contracts 
 ;; modify using assoc
-(def contracts {1 createContract "BAC"
-                2 createContract "IBN"
+(def contracts {:1 createContract "BAC"
+                :2 createContract "IBN"
                 }
               )
+
+
+
+

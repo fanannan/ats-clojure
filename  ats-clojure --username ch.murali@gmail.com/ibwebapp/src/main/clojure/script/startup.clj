@@ -16,7 +16,7 @@
 ;(sh "javaws" "/home/mchapala/Downloads/edemo.jnlp &")
 (info "Started sleeping")
 ;(info "time" (. currentTimeMillis System))
-(. Thread (sleep 60000))
+;(. Thread (sleep 60000))
 (info "comes to connection")
 ; connect tws
 (def connObj (connect (Ewrapperimpl.) "localhost" 7496 4))
@@ -29,13 +29,17 @@
 (info "requesting market Data")
 (def xstreamInstance (XStream.))
 (info "all contracts " (.toXML xstreamInstance contracts))
-(def sampleContractToTest (get contracts 2))
-(info "all contracts " (.toXML xstreamInstance contracts))
-(info "getting data for " sampleContractToTest)
+(def sampleContractToTest (contracts 2))
 (info "getting data for " (.toXML xstreamInstance sampleContractToTest))
-(request-market-data connObj 1  (get contracts 2) "221")
+(request-market-data connObj 1 sampleContractToTest  "221")
 
-                 
+
+(createContract "BAC")
+(.invoke createContract "BAC")
+(def testContract (.invoke createContract "BAC"))
+(info "getting data for " (.toXML xstreamInstance testContract))
+
+(println createContract "BAC")
 ;(info "tws queue...while true")
 ;(while true 
 ;  (def message (.take twsqueue))
